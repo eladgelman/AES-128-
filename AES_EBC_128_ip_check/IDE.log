@@ -1,0 +1,690 @@
+13:17:36 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\User\AES_EBC_128_ip_check\temp_xsdb_launch_script.tcl
+13:17:37 INFO  : Registering command handlers for Vitis TCF services
+13:17:42 INFO  : Platform repository initialization has completed.
+13:17:42 INFO  : XSCT server has started successfully.
+13:17:42 INFO  : Successfully done setting XSCT server connection channel  
+13:17:46 INFO  : plnx-install-location is set to ''
+13:17:46 INFO  : Successfully done setting workspace for the tool. 
+13:17:46 INFO  : Successfully done query RDI_DATADIR 
+13:19:09 INFO  : Result from executing command 'getProjects': myplatfrom
+13:19:09 INFO  : Result from executing command 'getPlatforms': 
+13:20:45 INFO  : Result from executing command 'getProjects': myplatfrom
+13:20:45 INFO  : Result from executing command 'getPlatforms': myplatfrom|C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/myplatfrom.xpfm
+13:31:44 INFO  : Checking for BSP changes to sync application flags for project 'software_test'...
+13:32:45 INFO  : Checking for BSP changes to sync application flags for project 'software_test'...
+13:36:24 INFO  : Checking for BSP changes to sync application flags for project 'software_test'...
+13:36:29 INFO  : Checking for BSP changes to sync application flags for project 'software_test'...
+13:36:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:36:53 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+13:36:53 INFO  : 'jtag frequency' command is executed.
+13:36:53 INFO  : Context for 'APU' is selected.
+13:36:54 INFO  : System reset is completed.
+13:36:57 INFO  : 'after 3000' command is executed.
+13:36:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+13:36:59 INFO  : FPGA configured successfully with bitstream "C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit"
+13:36:59 INFO  : Context for 'APU' is selected.
+13:36:59 INFO  : Hardware design and registers information is loaded from 'C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa'.
+13:36:59 INFO  : 'configparams force-mem-access 1' command is executed.
+13:36:59 INFO  : Context for 'APU' is selected.
+13:36:59 INFO  : Sourcing of 'C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl' is done.
+13:37:00 INFO  : 'ps7_init' command is executed.
+13:37:00 INFO  : 'ps7_post_config' command is executed.
+13:37:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:37:00 INFO  : The application 'C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:37:00 INFO  : 'configparams force-mem-access 0' command is executed.
+13:37:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:37:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:37:01 INFO  : 'con' command is executed.
+13:37:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:37:01 INFO  : Launch script is exported to file 'C:\Users\User\AES_EBC_128_ip_check\.sdk\launch_scripts\single_application_debug\debugger_software_test-default.tcl'
+13:38:46 INFO  : Disconnected from the channel tcfchan#3.
+13:38:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:38:47 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+13:38:47 INFO  : 'jtag frequency' command is executed.
+13:38:47 INFO  : Context for 'APU' is selected.
+13:38:47 INFO  : System reset is completed.
+13:38:50 INFO  : 'after 3000' command is executed.
+13:38:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+13:38:53 INFO  : FPGA configured successfully with bitstream "C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit"
+13:38:53 INFO  : Context for 'APU' is selected.
+13:38:53 INFO  : Hardware design and registers information is loaded from 'C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa'.
+13:38:53 INFO  : 'configparams force-mem-access 1' command is executed.
+13:38:53 INFO  : Context for 'APU' is selected.
+13:38:53 INFO  : Sourcing of 'C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl' is done.
+13:38:54 INFO  : 'ps7_init' command is executed.
+13:38:54 INFO  : 'ps7_post_config' command is executed.
+13:38:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:38:54 INFO  : The application 'C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:38:54 INFO  : 'configparams force-mem-access 0' command is executed.
+13:38:54 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:38:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:38:54 INFO  : 'con' command is executed.
+13:38:54 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:38:54 INFO  : Launch script is exported to file 'C:\Users\User\AES_EBC_128_ip_check\.sdk\launch_scripts\single_application_debug\debugger_software_test-default.tcl'
+14:02:03 INFO  : Checking for BSP changes to sync application flags for project 'software_test'...
+14:02:10 INFO  : Checking for BSP changes to sync application flags for project 'software_test'...
+14:02:41 INFO  : Disconnected from the channel tcfchan#4.
+14:02:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:02:42 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+14:02:42 INFO  : 'jtag frequency' command is executed.
+14:02:42 INFO  : Context for 'APU' is selected.
+14:02:42 INFO  : System reset is completed.
+14:02:45 INFO  : 'after 3000' command is executed.
+14:02:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+14:02:48 INFO  : FPGA configured successfully with bitstream "C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit"
+14:02:48 INFO  : Context for 'APU' is selected.
+14:02:48 INFO  : Hardware design and registers information is loaded from 'C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa'.
+14:02:48 INFO  : 'configparams force-mem-access 1' command is executed.
+14:02:48 INFO  : Context for 'APU' is selected.
+14:02:48 INFO  : Sourcing of 'C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl' is done.
+14:02:49 INFO  : 'ps7_init' command is executed.
+14:02:49 INFO  : 'ps7_post_config' command is executed.
+14:02:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:02:49 INFO  : The application 'C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:02:49 INFO  : 'configparams force-mem-access 0' command is executed.
+14:02:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:02:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:02:49 INFO  : 'con' command is executed.
+14:02:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:02:49 INFO  : Launch script is exported to file 'C:\Users\User\AES_EBC_128_ip_check\.sdk\launch_scripts\single_application_debug\debugger_software_test-default.tcl'
+14:04:36 INFO  : Checking for BSP changes to sync application flags for project 'software_test'...
+14:04:41 INFO  : Checking for BSP changes to sync application flags for project 'software_test'...
+14:05:06 INFO  : Disconnected from the channel tcfchan#6.
+14:05:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:05:07 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+14:05:07 INFO  : 'jtag frequency' command is executed.
+14:05:07 INFO  : Context for 'APU' is selected.
+14:05:07 INFO  : System reset is completed.
+14:05:10 INFO  : 'after 3000' command is executed.
+14:05:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+14:05:13 INFO  : FPGA configured successfully with bitstream "C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit"
+14:05:13 INFO  : Context for 'APU' is selected.
+14:05:13 INFO  : Hardware design and registers information is loaded from 'C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa'.
+14:05:13 INFO  : 'configparams force-mem-access 1' command is executed.
+14:05:13 INFO  : Context for 'APU' is selected.
+14:05:13 INFO  : Sourcing of 'C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl' is done.
+14:05:13 INFO  : 'ps7_init' command is executed.
+14:05:14 INFO  : 'ps7_post_config' command is executed.
+14:05:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:05:14 INFO  : The application 'C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:05:14 INFO  : 'configparams force-mem-access 0' command is executed.
+14:05:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:05:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:05:14 INFO  : 'con' command is executed.
+14:05:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:05:14 INFO  : Launch script is exported to file 'C:\Users\User\AES_EBC_128_ip_check\.sdk\launch_scripts\single_application_debug\debugger_software_test-default.tcl'
+14:07:25 INFO  : Disconnected from the channel tcfchan#8.
+14:07:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:07:26 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+14:07:26 INFO  : 'jtag frequency' command is executed.
+14:07:26 INFO  : Context for 'APU' is selected.
+14:07:26 INFO  : System reset is completed.
+14:07:29 INFO  : 'after 3000' command is executed.
+14:07:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+14:07:32 INFO  : FPGA configured successfully with bitstream "C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit"
+14:07:32 INFO  : Context for 'APU' is selected.
+14:07:32 INFO  : Hardware design and registers information is loaded from 'C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa'.
+14:07:32 INFO  : 'configparams force-mem-access 1' command is executed.
+14:07:32 INFO  : Context for 'APU' is selected.
+14:07:32 INFO  : Sourcing of 'C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl' is done.
+14:07:33 INFO  : 'ps7_init' command is executed.
+14:07:33 INFO  : 'ps7_post_config' command is executed.
+14:07:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:07:33 INFO  : The application 'C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:07:33 INFO  : 'configparams force-mem-access 0' command is executed.
+14:07:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:07:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:07:33 INFO  : 'con' command is executed.
+14:07:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:07:33 INFO  : Launch script is exported to file 'C:\Users\User\AES_EBC_128_ip_check\.sdk\launch_scripts\single_application_debug\debugger_software_test-default.tcl'
+14:08:48 INFO  : Checking for BSP changes to sync application flags for project 'software_test'...
+14:08:56 INFO  : Checking for BSP changes to sync application flags for project 'software_test'...
+14:09:18 INFO  : Disconnected from the channel tcfchan#9.
+14:09:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:09:19 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+14:09:19 INFO  : 'jtag frequency' command is executed.
+14:09:19 INFO  : Context for 'APU' is selected.
+14:09:19 INFO  : System reset is completed.
+14:09:22 INFO  : 'after 3000' command is executed.
+14:09:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+14:09:25 INFO  : FPGA configured successfully with bitstream "C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit"
+14:09:25 INFO  : Context for 'APU' is selected.
+14:09:25 INFO  : Hardware design and registers information is loaded from 'C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa'.
+14:09:25 INFO  : 'configparams force-mem-access 1' command is executed.
+14:09:25 INFO  : Context for 'APU' is selected.
+14:09:25 INFO  : Sourcing of 'C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl' is done.
+14:09:26 INFO  : 'ps7_init' command is executed.
+14:09:26 INFO  : 'ps7_post_config' command is executed.
+14:09:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:09:26 INFO  : The application 'C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:09:26 INFO  : 'configparams force-mem-access 0' command is executed.
+14:09:26 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:09:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:09:26 INFO  : 'con' command is executed.
+14:09:26 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:09:26 INFO  : Launch script is exported to file 'C:\Users\User\AES_EBC_128_ip_check\.sdk\launch_scripts\single_application_debug\debugger_software_test-default.tcl'
+14:10:48 INFO  : Checking for BSP changes to sync application flags for project 'software_test'...
+14:11:01 INFO  : Checking for BSP changes to sync application flags for project 'software_test'...
+14:11:25 INFO  : Disconnected from the channel tcfchan#11.
+14:11:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:11:26 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+14:11:26 INFO  : 'jtag frequency' command is executed.
+14:11:26 INFO  : Context for 'APU' is selected.
+14:11:27 INFO  : System reset is completed.
+14:11:30 INFO  : 'after 3000' command is executed.
+14:11:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+14:11:32 INFO  : FPGA configured successfully with bitstream "C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit"
+14:11:32 INFO  : Context for 'APU' is selected.
+14:11:32 INFO  : Hardware design and registers information is loaded from 'C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa'.
+14:11:32 INFO  : 'configparams force-mem-access 1' command is executed.
+14:11:32 INFO  : Context for 'APU' is selected.
+14:11:32 INFO  : Sourcing of 'C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl' is done.
+14:11:33 INFO  : 'ps7_init' command is executed.
+14:11:33 INFO  : 'ps7_post_config' command is executed.
+14:11:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:11:33 INFO  : The application 'C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:11:33 INFO  : 'configparams force-mem-access 0' command is executed.
+14:11:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:11:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:11:33 INFO  : 'con' command is executed.
+14:11:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:11:33 INFO  : Launch script is exported to file 'C:\Users\User\AES_EBC_128_ip_check\.sdk\launch_scripts\single_application_debug\debugger_software_test-default.tcl'
+14:13:31 INFO  : Checking for BSP changes to sync application flags for project 'software_test'...
+14:13:59 INFO  : Checking for BSP changes to sync application flags for project 'software_test'...
+14:14:24 INFO  : Disconnected from the channel tcfchan#13.
+14:14:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:14:26 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+14:14:26 INFO  : 'jtag frequency' command is executed.
+14:14:26 INFO  : Context for 'APU' is selected.
+14:14:26 INFO  : System reset is completed.
+14:14:29 INFO  : 'after 3000' command is executed.
+14:14:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+14:14:31 INFO  : FPGA configured successfully with bitstream "C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit"
+14:14:31 INFO  : Context for 'APU' is selected.
+14:14:31 INFO  : Hardware design and registers information is loaded from 'C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa'.
+14:14:31 INFO  : 'configparams force-mem-access 1' command is executed.
+14:14:31 INFO  : Context for 'APU' is selected.
+14:14:31 INFO  : Sourcing of 'C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl' is done.
+14:14:32 INFO  : 'ps7_init' command is executed.
+14:14:32 INFO  : 'ps7_post_config' command is executed.
+14:14:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:14:32 INFO  : The application 'C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:14:32 INFO  : 'configparams force-mem-access 0' command is executed.
+14:14:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:14:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:14:32 INFO  : 'con' command is executed.
+14:14:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:14:33 INFO  : Launch script is exported to file 'C:\Users\User\AES_EBC_128_ip_check\.sdk\launch_scripts\single_application_debug\debugger_software_test-default.tcl'
+14:15:57 INFO  : Disconnected from the channel tcfchan#15.
+14:15:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:15:58 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+14:15:58 INFO  : 'jtag frequency' command is executed.
+14:15:58 INFO  : Context for 'APU' is selected.
+14:15:58 INFO  : System reset is completed.
+14:16:01 INFO  : 'after 3000' command is executed.
+14:16:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+14:16:04 INFO  : FPGA configured successfully with bitstream "C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit"
+14:16:04 INFO  : Context for 'APU' is selected.
+14:16:04 INFO  : Hardware design and registers information is loaded from 'C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa'.
+14:16:04 INFO  : 'configparams force-mem-access 1' command is executed.
+14:16:04 INFO  : Context for 'APU' is selected.
+14:16:04 INFO  : Sourcing of 'C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl' is done.
+14:16:05 INFO  : 'ps7_init' command is executed.
+14:16:05 INFO  : 'ps7_post_config' command is executed.
+14:16:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:16:05 INFO  : The application 'C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:16:05 INFO  : 'configparams force-mem-access 0' command is executed.
+14:16:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:16:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:16:05 INFO  : 'con' command is executed.
+14:16:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:16:05 INFO  : Launch script is exported to file 'C:\Users\User\AES_EBC_128_ip_check\.sdk\launch_scripts\single_application_debug\debugger_software_test-default.tcl'
+14:22:33 INFO  : Checking for BSP changes to sync application flags for project 'software_test'...
+14:22:38 INFO  : Checking for BSP changes to sync application flags for project 'software_test'...
+14:23:03 INFO  : Disconnected from the channel tcfchan#16.
+14:23:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:23:04 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+14:23:04 INFO  : 'jtag frequency' command is executed.
+14:23:04 INFO  : Context for 'APU' is selected.
+14:23:04 INFO  : System reset is completed.
+14:23:07 INFO  : 'after 3000' command is executed.
+14:23:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+14:23:10 INFO  : FPGA configured successfully with bitstream "C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit"
+14:23:10 INFO  : Context for 'APU' is selected.
+14:23:10 INFO  : Hardware design and registers information is loaded from 'C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa'.
+14:23:10 INFO  : 'configparams force-mem-access 1' command is executed.
+14:23:10 INFO  : Context for 'APU' is selected.
+14:23:10 INFO  : Sourcing of 'C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl' is done.
+14:23:10 INFO  : 'ps7_init' command is executed.
+14:23:10 INFO  : 'ps7_post_config' command is executed.
+14:23:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:23:11 INFO  : The application 'C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:23:11 INFO  : 'configparams force-mem-access 0' command is executed.
+14:23:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:23:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:23:11 INFO  : 'con' command is executed.
+14:23:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:23:11 INFO  : Launch script is exported to file 'C:\Users\User\AES_EBC_128_ip_check\.sdk\launch_scripts\single_application_debug\debugger_software_test-default.tcl'
+14:23:52 INFO  : Disconnected from the channel tcfchan#18.
+14:23:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:23:53 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+14:23:53 INFO  : 'jtag frequency' command is executed.
+14:23:53 INFO  : Context for 'APU' is selected.
+14:23:54 INFO  : System reset is completed.
+14:23:57 INFO  : 'after 3000' command is executed.
+14:23:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+14:23:59 INFO  : FPGA configured successfully with bitstream "C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit"
+14:23:59 INFO  : Context for 'APU' is selected.
+14:23:59 INFO  : Hardware design and registers information is loaded from 'C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa'.
+14:23:59 INFO  : 'configparams force-mem-access 1' command is executed.
+14:23:59 INFO  : Context for 'APU' is selected.
+14:23:59 INFO  : Sourcing of 'C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl' is done.
+14:24:00 INFO  : 'ps7_init' command is executed.
+14:24:00 INFO  : 'ps7_post_config' command is executed.
+14:24:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:24:00 INFO  : The application 'C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:24:00 INFO  : 'configparams force-mem-access 0' command is executed.
+14:24:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:24:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:24:00 INFO  : 'con' command is executed.
+14:24:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:24:00 INFO  : Launch script is exported to file 'C:\Users\User\AES_EBC_128_ip_check\.sdk\launch_scripts\single_application_debug\debugger_software_test-default.tcl'
+14:25:43 INFO  : Disconnected from the channel tcfchan#19.
+20:35:02 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\User\AES_EBC_128_ip_check\temp_xsdb_launch_script.tcl
+20:35:10 INFO  : XSCT server has started successfully.
+20:35:11 INFO  : plnx-install-location is set to ''
+20:35:11 INFO  : Successfully done setting XSCT server connection channel  
+20:35:11 INFO  : Successfully done setting workspace for the tool. 
+20:35:23 INFO  : Registering command handlers for Vitis TCF services
+20:35:24 INFO  : Platform repository initialization has completed.
+20:35:29 INFO  : Successfully done query RDI_DATADIR 
+20:40:03 INFO  : Hardware specification for platform project 'myplatfrom' is updated.
+20:40:17 INFO  : Result from executing command 'getProjects': myplatfrom
+20:40:17 INFO  : Result from executing command 'getPlatforms': myplatfrom|C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/myplatfrom.xpfm
+20:47:48 INFO  : Checking for BSP changes to sync application flags for project 'software_test'...
+20:47:58 INFO  : Checking for BSP changes to sync application flags for project 'software_test'...
+20:47:59 INFO  : The hardware specfication used by project 'software_test' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+20:47:59 INFO  : The file 'C:\Users\User\AES_EBC_128_ip_check\software_test\_ide\bitstream\AES_EBC_128_design_wrapper.bit' stored in project is removed.
+20:47:59 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\User\AES_EBC_128_ip_check\software_test\_ide\bitstream' in project 'software_test'.
+20:47:59 INFO  : The file 'C:\Users\User\AES_EBC_128_ip_check\software_test\_ide\psinit\ps7_init.tcl' stored in project is removed.
+20:48:08 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\User\AES_EBC_128_ip_check\software_test\_ide\psinit' in project 'software_test'.
+20:48:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:48:29 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+20:48:29 INFO  : 'jtag frequency' command is executed.
+20:48:30 INFO  : Context for 'APU' is selected.
+20:48:30 INFO  : System reset is completed.
+20:48:33 INFO  : 'after 3000' command is executed.
+20:48:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+20:48:36 INFO  : FPGA configured successfully with bitstream "C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit"
+20:48:36 INFO  : Context for 'APU' is selected.
+20:48:36 INFO  : Hardware design and registers information is loaded from 'C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa'.
+20:48:36 INFO  : 'configparams force-mem-access 1' command is executed.
+20:48:36 INFO  : Context for 'APU' is selected.
+20:48:36 INFO  : Sourcing of 'C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl' is done.
+20:48:38 INFO  : 'ps7_init' command is executed.
+20:48:38 INFO  : 'ps7_post_config' command is executed.
+20:48:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:48:38 INFO  : The application 'C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:48:38 INFO  : 'configparams force-mem-access 0' command is executed.
+20:48:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:48:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:48:39 INFO  : 'con' command is executed.
+20:48:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:48:39 INFO  : Launch script is exported to file 'C:\Users\User\AES_EBC_128_ip_check\.sdk\launch_scripts\single_application_debug\debugger_software_test-default.tcl'
+20:52:36 INFO  : Disconnected from the channel tcfchan#3.
+20:52:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:52:37 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+20:52:37 INFO  : 'jtag frequency' command is executed.
+20:52:37 INFO  : Context for 'APU' is selected.
+20:52:37 INFO  : System reset is completed.
+20:52:40 INFO  : 'after 3000' command is executed.
+20:52:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+20:52:43 INFO  : FPGA configured successfully with bitstream "C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit"
+20:52:43 INFO  : Context for 'APU' is selected.
+20:52:43 INFO  : Hardware design and registers information is loaded from 'C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa'.
+20:52:43 INFO  : 'configparams force-mem-access 1' command is executed.
+20:52:43 INFO  : Context for 'APU' is selected.
+20:52:43 INFO  : Sourcing of 'C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl' is done.
+20:52:44 INFO  : 'ps7_init' command is executed.
+20:52:44 INFO  : 'ps7_post_config' command is executed.
+20:52:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:52:44 INFO  : The application 'C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:52:44 INFO  : 'configparams force-mem-access 0' command is executed.
+20:52:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:52:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:52:44 INFO  : 'con' command is executed.
+20:52:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:52:44 INFO  : Launch script is exported to file 'C:\Users\User\AES_EBC_128_ip_check\.sdk\launch_scripts\single_application_debug\debugger_software_test-default.tcl'
+20:54:15 INFO  : Disconnected from the channel tcfchan#4.
+20:54:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:54:16 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+20:54:16 INFO  : 'jtag frequency' command is executed.
+20:54:16 INFO  : Context for 'APU' is selected.
+20:54:16 INFO  : System reset is completed.
+20:54:19 INFO  : 'after 3000' command is executed.
+20:54:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+20:54:22 INFO  : FPGA configured successfully with bitstream "C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit"
+20:54:22 INFO  : Context for 'APU' is selected.
+20:54:22 INFO  : Hardware design and registers information is loaded from 'C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa'.
+20:54:22 INFO  : 'configparams force-mem-access 1' command is executed.
+20:54:22 INFO  : Context for 'APU' is selected.
+20:54:22 INFO  : Sourcing of 'C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl' is done.
+20:54:23 INFO  : 'ps7_init' command is executed.
+20:54:23 INFO  : 'ps7_post_config' command is executed.
+20:54:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:54:23 INFO  : The application 'C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:54:23 INFO  : 'configparams force-mem-access 0' command is executed.
+20:54:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/bitstream/AES_EBC_128_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/User/AES_EBC_128_ip_check/myplatfrom/export/myplatfrom/hw/AES_EBC_128_design_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/User/AES_EBC_128_ip_check/software_test/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/User/AES_EBC_128_ip_check/software_test/Debug/software_test.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:54:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:54:23 INFO  : 'con' command is executed.
+20:54:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:54:23 INFO  : Launch script is exported to file 'C:\Users\User\AES_EBC_128_ip_check\.sdk\launch_scripts\single_application_debug\debugger_software_test-default.tcl'
+23:04:33 INFO  : Disconnected from the channel tcfchan#5.

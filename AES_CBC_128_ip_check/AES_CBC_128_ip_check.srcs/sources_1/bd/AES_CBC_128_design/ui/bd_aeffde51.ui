@@ -1,0 +1,48 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.30817",
+   "Default View_TopLeft":"-71,-393",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 6 -x 1900 -y 630 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 6 -x 1900 -y 650 -defaultsOSRD
+preplace port sw1 -pg 1 -lvl 0 -x -20 -y 540 -defaultsOSRD
+preplace portBus LD4_port -pg 1 -lvl 6 -x 1900 -y 130 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 5 -x 1640 -y 680 -defaultsOSRD
+preplace inst AES_CBC_128_0 -pg 1 -lvl 5 -x 1640 -y 120 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 3 -x 880 -y 290 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 4 -x 1240 -y 300 -defaultsOSRD
+preplace inst axi_interconnect_1 -pg 1 -lvl 4 -x 1240 -y 680 -defaultsOSRD
+preplace inst axis_data_fifo_0 -pg 1 -lvl 4 -x 1240 -y 90 -defaultsOSRD
+preplace inst axis_data_fifo_1 -pg 1 -lvl 2 -x 530 -y 170 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 1 -x 190 -y 440 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -x 530 -y 390 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 5 -x 1640 -y 450 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 10 540 370 250 710 170 1090 170 1410 550 1870
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 20 560 NJ 560 NJ 560 NJ 560 NJ 560 1860
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 4 360 90 680 90 1060 440 1420
+preplace netloc en_decrypt_0_1 1 0 5 0J 550 NJ 550 NJ 550 NJ 550 1400J
+preplace netloc AES_CBC_128_0_LD4_rgb 1 5 1 1880 130n
+preplace netloc processing_system7_0_DDR 1 5 1 NJ 630
+preplace netloc processing_system7_0_FIXED_IO 1 5 1 NJ 650
+preplace netloc axi_interconnect_0_M00_AXI 1 4 1 1390 300n
+preplace netloc axi_interconnect_1_M00_AXI 1 4 1 N 680
+preplace netloc S00_AXI_1 1 3 1 1080 230n
+preplace netloc axi_dma_0_M_AXI_S2MM 1 3 1 1050 250n
+preplace netloc axis_data_fifo_1_M_AXIS 1 2 1 700 170n
+preplace netloc AES_CBC_128_0_m00_axis 1 1 5 380 10 NJ 10 NJ 10 NJ 10 1880
+preplace netloc axis_data_fifo_0_M_AXIS 1 4 1 N 90
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 3 1 1070 70n
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 5 380 540 NJ 540 NJ 540 NJ 540 1880
+preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 690 240n
+preplace netloc ps7_0_axi_periph_M01_AXI 1 2 3 700 430 NJ 430 NJ
+levelinfo -pg 1 -20 190 530 880 1240 1640 1900
+pagesize -pg 1 -db -bbox -sgen -100 0 2040 800
+"
+}
+{
+   "da_axi4_cnt":"2",
+   "da_clkrst_cnt":"7",
+   "da_ps7_cnt":"1"
+}
