@@ -49,7 +49,7 @@ if { [info exists ::user_project_name] } {
 }
 
 variable script_file
-set script_file "AES_CBC_128_ip_check.tcl"
+set script_file "aes_cbc_128_script.tcl"
 
 # Help information for this script
 proc print_help {} {
