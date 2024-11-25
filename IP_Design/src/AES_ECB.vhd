@@ -3,7 +3,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity AES_EBC is
+entity AES_ECB is
 generic (
     C_AXIS_TDATA_WIDTH: integer := 128
 );
@@ -27,9 +27,9 @@ Port (
     --non- AXI port
     en_decrypt: in std_logic  
 );
-end AES_EBC;
+end AES_ECB;
 
-architecture Behavioral of AES_EBC is
+architecture Behavioral of AES_ECB is
 
 --components-----------------------------------------
 component KeyExpansion is

@@ -3,11 +3,11 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity AES_EBC_tb is
-end AES_EBC_tb;
+entity AES_ECB_tb is
+end AES_ECB_tb;
 
-architecture Behavioral of AES_EBC_tb is
-component AES_EBC
+architecture Behavioral of AES_ECB_tb is
+component AES_ECB
 generic (
     C_AXIS_TDATA_WIDTH: integer := 128
 );
@@ -52,7 +52,7 @@ signal m00_axis_tlast: std_logic;
 signal en_decrypt: std_logic:= '0';
 
 begin
-U1: AES_EBC port map(
+U1: AES_ECB port map(
     s00_axis_aclk => s00_axis_aclk,
     s00_axis_aresetn => s00_axis_aresetn,
     s00_axis_tdata => s00_axis_tdata,

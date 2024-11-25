@@ -37,7 +37,7 @@
 #    "IP_Design/src/MixColumns8.vhd"
 #    "IP_Design/src/Encrypt.vhd"
 #    "IP_Design/src/AES_CBC.vhd"
-#    "IP_Design/src/AES_EBC.vhd"
+#    "IP_Design/src/AES_ECB.vhd"
 #    "IP_Design/sim/KeyExpansion_192_tb.vhd"
 #    "IP_Design/sim/Decrypt_tb.vhd"
 #    "IP_Design/sim/FinalRoundDecryption_tb.vhd"
@@ -52,7 +52,7 @@
 #    "IP_Design/sim/MainRoundEncryption_tb.vhd"
 #    "IP_Design/sim/MixColumns8_tb.vhd"
 #    "IP_Design/sim/AES_CBC_tb.vhd"
-#    "IP_Design/sim/AES_EBC_tb.vhd"
+#    "IP_Design/sim/AES_ECB_tb.vhd"
 #
 # 3. The following remote source files that were added to the original project:-
 #
@@ -171,7 +171,7 @@ set files [list \
  [file normalize "IP_Design/src/MixColumns8.vhd" ]\
  [file normalize "IP_Design/src/Encrypt.vhd" ]\
  [file normalize "IP_Design/src/AES_CBC.vhd" ]\
- [file normalize "IP_Design/src/AES_EBC.vhd" ]\
+ [file normalize "IP_Design/src/AES_ECB.vhd" ]\
 ]
 set imported_files [import_files -fileset sources_1 $files]
 
@@ -235,7 +235,7 @@ set file "AES_CBC.vhd"
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "AES_EBC.vhd"
+set file "AES_ECB.vhd"
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
@@ -281,7 +281,7 @@ set files [list \
  [file normalize "IP_Design/sim/MainRoundEncryption_tb.vhd" ]\
  [file normalize "IP_Design/sim/MixColumns8_tb.vhd" ]\
  [file normalize "IP_Design/sim/AES_CBC_tb.vhd" ]\
- [file normalize "IP_Design/sim/AES_EBC_tb.vhd" ]\
+ [file normalize "IP_Design/sim/AES_ECB_tb.vhd" ]\
 ]
 set imported_files [import_files -fileset sim_1 $files]
 
@@ -345,7 +345,7 @@ set file "AES_CBC_tb.vhd"
 set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 
-set file "AES_EBC_tb.vhd"
+set file "AES_ECB_tb.vhd"
 set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
 set_property -name "file_type" -value "VHDL" -objects $file_obj
 

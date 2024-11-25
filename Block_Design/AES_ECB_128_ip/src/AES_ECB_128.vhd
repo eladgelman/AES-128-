@@ -3,7 +3,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity AES_EBC_128 is
+entity AES_ECB_128 is
 generic (
     C_AXIS_TDATA_WIDTH: integer := 128
 );
@@ -26,9 +26,9 @@ Port (
     en_decrypt: in std_logic; 
     LD4_rgb: out std_logic_vector(2 downto 0) 
 );
-end AES_EBC_128;
+end AES_ECB_128;
 
-architecture Behavioral of AES_EBC_128 is
+architecture Behavioral of AES_ECB_128 is
 --components-----------------------------------------
 component KeyExpansion_128 is
 generic (

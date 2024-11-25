@@ -3,13 +3,13 @@
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
 //Date        : Wed Jul  3 20:19:38 2024
 //Host        : DESKTOP-JE2C2J2 running 64-bit major release  (build 9200)
-//Command     : generate_target AES_EBC_128_design_wrapper.bd
-//Design      : AES_EBC_128_design_wrapper
+//Command     : generate_target AES_ECB_128_design_wrapper.bd
+//Design      : AES_ECB_128_design_wrapper
 //Purpose     : IP block netlist
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-module AES_EBC_128_design_wrapper
+module AES_ECB_128_design_wrapper
    (DDR_addr,
     DDR_ba,
     DDR_cas_n,
@@ -81,7 +81,7 @@ module AES_EBC_128_design_wrapper
   wire [2:0]LD4_port;
   wire sw1;
 
-  AES_EBC_128_design AES_EBC_128_design_i
+  AES_ECB_128_design AES_ECB_128_design_i
        (.DDR_addr(DDR_addr),
         .DDR_ba(DDR_ba),
         .DDR_cas_n(DDR_cas_n),
